@@ -1,0 +1,10 @@
+---
+- name: Install MongoDB
+  hosts: dbserver
+  vars:
+    mongodb_security_authorization: "enabled"
+
+  roles:
+    - common
+    - mongo
+

@@ -1,0 +1,10 @@
+---
+ansible_user: ptondreau
+ansible_become: true
+ansible_become_method: sudo
+ansible_become_user: root
+
+frontend_container_port: "4100:4100"
+backend_container_port: "3000:3000"
+frontend_port: 4100
+backend_port: 3000

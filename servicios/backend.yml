@@ -1,0 +1,36 @@
+- name: Install Docker
+  hosts: backend
+  roles: 
+    - common
+    - pip
+    - docker
+
+- name: Install Docker Images
+  hosts: backend
+  tasks:
+    - name: Install backend
+      docker_container:
+        name: backend
+        image: pierresimt/backend
+        ports:
+          - "{{ backend_container_port }}"
+    - name: Install frontend
+      docker_container:
+        name: frontend
+        image: pierresimt/frontend
+        ports:
+          - "{{ frontend_container_port }}"
+
+- name: Open needed ports in firewall
+  hosts: backend 
+  tasks:
+    - name: Open Port 4100
+      firewalld:
+        port: "{{ frontend_port }}/tcp"
+        permanent: yes
+        state: enabled
+    - name: Open Port 3000
+      firewalld:
+        port: "{{ backend_port }}/tcp"
+        permanent: yes
+        state: enabled

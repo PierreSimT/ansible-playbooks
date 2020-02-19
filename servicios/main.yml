@@ -1,0 +1,4 @@
+---
+- include: dbserver.yml
+- include: backend.yml
+- include: load-balancer.yml

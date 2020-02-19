@@ -1,0 +1,11 @@
+---
+ssh_keys: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC8ZcjQ8nRqbxR+Ik8jKrE/3vJwIafh+A2B612N/RrpcZAUNJqCL3RrRcu1Rqbp4BhvFh/FbyYOTRI79d+l/qNpSnQF/dhIUDE1PUYAz32IHccfXgRtiKciVJ/p5yObcN615F6nB2hBE8vZPNu2AbftcQKrIDPdlwTfaBKJxAXaqvqzceCDnMf22n/SbWlzInp7yund/ddT+LHnTllZ6inNZVO3U/iP9cElBUN1UrBKIfY3MFJ1ZaQALGFvBvsUN2tUwSh37HJhkk/mxLipiwOewevlbpxv5a6suS6lRsEMPSge0gOPGwTo42hZiEb6NkS2a2tJEnZxI+AkYsIbTBnj ansible
+nodes:
+  - name: oveja-Backend
+node_nics: 
+  - name: nic1
+    profile_name: DOC1
+  - name: nic2
+    profile_name: DOCP2P-4013
+  - name: nic3
+    profile_name: DOCP2P-4012

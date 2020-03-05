@@ -1,0 +1,11 @@
+---
+ssh_keys: CLAVE SSH
+nodes:
+  - name: oveja-Backend
+node_nics: 
+  - name: nic1
+    profile_name: DOC1
+  - name: nic2
+    profile_name: DOCP2P-4013
+  - name: nic3
+    profile_name: DOCP2P-4012

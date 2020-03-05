@@ -27,7 +27,7 @@ nginx_http_template:
         sticky_cookie: false
         servers:
           frontend_server_1:
-            address: 192.168.100.5
+            address: "{{ frontend_server }}"
             port: "{{ frontend_port }}"
       upstream_2:
         name: backend_server
@@ -35,5 +35,5 @@ nginx_http_template:
         sticky_cookie: false
         servers:
           backend_server_1:
-            address: 192.168.100.5
+            address: "{{ backend_server }}"
             port: "{{ backend_port }}"

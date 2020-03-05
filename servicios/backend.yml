@@ -11,25 +11,25 @@
     - name: Install backend
       docker_container:
         name: backend
-        image: pierresimt/backend
+        image: "{{ docker_image_backend }}"
         ports:
           - "{{ backend_container_port }}"
     - name: Install frontend
       docker_container:
         name: frontend
-        image: pierresimt/frontend
+        image: "{{ docker_image_frontend }}"
         ports:
           - "{{ frontend_container_port }}"
 
 - name: Open needed ports in firewall
   hosts: backend 
   tasks:
-    - name: Open Port 4100
+    - name: Open Port {{ frontend_port }}
       firewalld:
         port: "{{ frontend_port }}/tcp"
         permanent: yes
         state: enabled
-    - name: Open Port 3000
+    - name: Open Port {{ backend_port }}
       firewalld:
         port: "{{ backend_port }}/tcp"
         permanent: yes
